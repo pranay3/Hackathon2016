@@ -36,7 +36,7 @@ public class MonDetail extends AppCompatActivity implements NumberPicker.OnValue
         monTag= getIntent().getExtras().getInt("Name");
         if(monTag==11)
         {
-            title.setText("Bangalore Palace");
+            title.setText("Taj Mahal");
             timings.setText("Timings: 8am to 8 pm");
             price.setText("Tickets");
             adult.setText("Adults: Rs. 120");

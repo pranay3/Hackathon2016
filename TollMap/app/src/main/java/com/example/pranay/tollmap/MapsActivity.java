@@ -111,7 +111,7 @@ public class MapsActivity extends FragmentActivity implements
 
             mon1 = mGoogleMap.addMarker(new MarkerOptions()
                     .position(new LatLng(latLng.latitude+0.0012, latLng.longitude-0.0037))
-                    .title("Bangalore Palace").icon(BitmapDescriptorFactory.fromResource(R.drawable.mmarker)));
+                    .title("Taj Mahal").icon(BitmapDescriptorFactory.fromResource(R.drawable.mmarker)));
             mon1.setTag(11);
 
             mon2 = mGoogleMap.addMarker(new MarkerOptions()
@@ -139,7 +139,6 @@ public class MapsActivity extends FragmentActivity implements
         mLocationRequest.setFastestInterval(3000); //3 seconds
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         //mLocationRequest.setSmallestDisplacement(0.1F); //1/10 meter
-
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
 
 
