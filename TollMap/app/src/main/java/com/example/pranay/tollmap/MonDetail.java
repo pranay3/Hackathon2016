@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MonDetail extends AppCompatActivity implements NumberPicker.OnValueChangeListener
 {
-    private int noAdults=1; private int noKids=1;
+    private int noAdults=0; private int noKids=0;
     NumberPicker np1,np2;
     private int monTag;
     int val=0;

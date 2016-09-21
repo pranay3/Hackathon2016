@@ -84,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="3" />
+            android:text="1" />
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
-                android:text="2" />
+                android:text="0" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
