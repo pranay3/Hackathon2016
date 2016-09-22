@@ -14,7 +14,7 @@ public class Notify {
     public void issueNotification(String type, String title, String desc, Context context) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context);
-
+        mBuilder.setAutoCancel(true);
         Intent clickIntent = null;
         Intent buyIntent = null;
 //        Intent dismissIntent = new Intent(context, PingService.class);
@@ -24,8 +24,10 @@ public class Notify {
 
         switch (type) {
             case "MONUMENT": {
-                clickIntent = new Intent(context, BuyTickets.class);
-                buyIntent = new Intent(context, BuyTickets.class);
+                clickIntent = new Intent(context, MonDetail.class);
+                clickIntent.putExtra("Name",11);
+                buyIntent = new Intent(context, MonDetail.class);
+                buyIntent.putExtra("Name",11);
                 buyButton ="Buy";
                 dismissButton = "Later";
                 mBuilder.setSmallIcon(R.drawable.tajmahal);

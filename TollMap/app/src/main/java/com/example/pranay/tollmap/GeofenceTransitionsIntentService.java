@@ -34,7 +34,7 @@ import static com.example.pranay.tollmap.Constants.TAG;
 public class GeofenceTransitionsIntentService extends IntentService
         implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-    private GoogleApiClient mGoogleApiClient;
+   // private GoogleApiClient mGoogleApiClient;
     private Notify notif= new Notify();
 
     public GeofenceTransitionsIntentService() {
@@ -44,11 +44,11 @@ public class GeofenceTransitionsIntentService extends IntentService
     @Override
     public void onCreate() {
         super.onCreate();
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(Wearable.API)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .build();
+//        mGoogleApiClient = new GoogleApiClient.Builder(this)
+//                .addApi(Wearable.API)
+//                .addConnectionCallbacks(this)
+//                .addOnConnectionFailedListener(this)
+//                .build();
     }
 
     /**
@@ -67,36 +67,35 @@ public class GeofenceTransitionsIntentService extends IntentService
             int transitionType = geoFenceEvent.getGeofenceTransition();
             if (Geofence.GEOFENCE_TRANSITION_ENTER == transitionType) {
                 // Connect to the Google Api service in preparation for sending a DataItem.
-                mGoogleApiClient.blockingConnect(CONNECTION_TIME_OUT_MS, TimeUnit.MILLISECONDS);
+                //mGoogleApiClient.blockingConnect(CONNECTION_TIME_OUT_MS, TimeUnit.MILLISECONDS);
                 // Get the geofence id triggered. Note that only one geofence can be triggered at a
                 // time in this example, but in some cases you might want to consider the full list
                 // of geofences triggered.
-                String triggeredGeoFenceId = geoFenceEvent.getTriggeringGeofences().get(0)
-                        .getRequestId();
+                //String triggeredGeoFenceId = geoFenceEvent.getTriggeringGeofences().get(0).getRequestId();
                 // Create a DataItem with this geofence's id. The wearable can use this to create
                 // a notification.
-                final PutDataMapRequest putDataMapRequest =
-                        PutDataMapRequest.create(GEOFENCE_DATA_ITEM_PATH);
-                putDataMapRequest.getDataMap().putString(KEY_GEOFENCE_ID, triggeredGeoFenceId);
-                putDataMapRequest.setUrgent();
-                if (mGoogleApiClient.isConnected()) {
-                    Wearable.DataApi.putDataItem(
-                            mGoogleApiClient, putDataMapRequest.asPutDataRequest()).await();
-                } else {
-                    Log.e(TAG, "Failed to send data item: " + putDataMapRequest
-                            + " - Client disconnected from Google Play Services");
-                }
-                notif.issueNotification("MONUMENT","This is notif","Notif",this);
-                Toast.makeText(this, "Entering Geofence",
-                        Toast.LENGTH_SHORT).show();
-                mGoogleApiClient.disconnect();
+//                final PutDataMapRequest putDataMapRequest =
+//                        PutDataMapRequest.create(GEOFENCE_DATA_ITEM_PATH);
+//                putDataMapRequest.getDataMap().putString(KEY_GEOFENCE_ID, triggeredGeoFenceId);
+//                putDataMapRequest.setUrgent();
+//                if (mGoogleApiClient.isConnected()) {
+//                    Wearable.DataApi.putDataItem(
+//                            mGoogleApiClient, putDataMapRequest.asPutDataRequest()).await();
+//                } else {
+//                    Log.e(TAG, "Failed to send data item: " + putDataMapRequest
+//                            + " - Client disconnected from Google Play Services");
+//                }
+                notif.issueNotification("MONUMENT","You are nearby Taj Mahal!","You are near Taj Mahal, one of the seven wonders of the world, Do you want to buy Tickets?",this);
+                //Toast.makeText(this, "Entering Geofence", Toast.LENGTH_SHORT).show();
+                //showToast(this,"Entering Geofence");
+                //mGoogleApiClient.disconnect();
             } else if (Geofence.GEOFENCE_TRANSITION_EXIT == transitionType) {
                 // Delete the data item when leaving a geofence region.
-                mGoogleApiClient.blockingConnect(CONNECTION_TIME_OUT_MS, TimeUnit.MILLISECONDS);
-                Wearable.DataApi.deleteDataItems(mGoogleApiClient, GEOFENCE_DATA_ITEM_URI).await();
-                Toast.makeText(this, "Exiting Geofence",
-                        Toast.LENGTH_SHORT).show();
-                mGoogleApiClient.disconnect();
+                //mGoogleApiClient.blockingConnect(CONNECTION_TIME_OUT_MS, TimeUnit.MILLISECONDS);
+                //Wearable.DataApi.deleteDataItems(mGoogleApiClient, GEOFENCE_DATA_ITEM_URI).await();
+                //notif.issueNotification("MONUMENT","Exiting","Notif",this);
+                showToast(this,"Exiting Geofence");
+                //mGoogleApiClient.disconnect();
             }
         }
     }
@@ -104,12 +103,12 @@ public class GeofenceTransitionsIntentService extends IntentService
     /**
      * Showing a toast message, using the Main thread
      */
-    private void showToast(final Context context, final int resourceId) {
+    private void showToast(final Context context, final String msg) {
         Handler mainThread = new Handler(Looper.getMainLooper());
         mainThread.post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(context, context.getString(resourceId), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
             }
         });
     }

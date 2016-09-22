@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:id="@+id/receipt">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#4caf50"-->
+        <!--android:gravity="center">-->
+        <!--<ImageView-->
+            <!--android:layout_width="200sp"-->
+            <!--android:layout_height="200sp"-->
+            <!--android:id="@+id/success"-->
+            <!--android:src="@drawable/tick"-->
+            <!--/>-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ticket"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:background="#B4FFFF"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:visibility="invisible">-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:srcCompat="@drawable/taj2"
+        android:id="@+id/imageView3" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="86sp"
+            android:layout_height="78sp"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:color/transparent"
+            app:backgroundTint="@android:color/holo_orange_dark" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="THUR"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32sp"
+            android:textSize="18sp"
+            android:elevation="16sp"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sept 22"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="55sp"
+            android:elevation="16sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/textView3" />
+
+    </FrameLayout>
+
+    <TextView
+        android:text="Taj Mahal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_gravity="left"
+         android:layout_marginTop="275sp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView4" />
+
+    <TextView
+        android:text="TIME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:layout_marginTop="320sp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@android:color/darker_gray"
+        android:id="@+id/textView5" />
+
+    <TextView
+        android:text="8:00 AM - 5:00 PM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:layout_marginTop="345sp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView6" />
+
+    <TextView
+        android:text="AMOUNT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="right"
+        android:layout_marginTop="320sp"
+        android:layout_marginRight="20sp"
+        android:textColor="@android:color/darker_gray"
+        android:id="@+id/textView7" />
+
+    <TextView
+        android:text="Rs.100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="right"
+        android:layout_marginTop="345sp"
+        android:layout_marginRight="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView8" />
+
+    <View
+        android:layout_width="350sp"
+        android:layout_height="2sp"
+        android:layout_marginTop="390sp"
+        android:layout_marginLeft="18sp"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:text="VALID FOR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:layout_marginTop="420sp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@android:color/darker_gray"
+        android:id="@+id/textView9" />
+
+    <TextView
+        android:text="1 Adult and 0 Kids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="left"
+        android:layout_marginTop="445sp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/textView10" />
+
+    <ImageView
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_marginTop="420sp"
+        android:layout_gravity="right"
+        android:layout_marginRight="20sp"
+        app:srcCompat="@drawable/qrcode"
+        android:id="@+id/imageView4" />
+    <!--</LinearLayout>-->
+</FrameLayout>

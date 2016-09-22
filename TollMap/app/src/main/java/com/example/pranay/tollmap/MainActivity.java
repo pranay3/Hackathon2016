@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements ConnectionCallbacks,
 
     // These will store hard-coded geofences in this sample app.
     private SimpleGeofence mAndroidBuildingGeofence;
-    private SimpleGeofence mYerbaBuenaGeofence;
+    private SimpleGeofence mYerbaBuenaGeofence ;
 
     // Persistent storage for geofences.
     private SimpleGeofenceStore mGeofenceStorage;
